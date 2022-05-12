@@ -15,10 +15,10 @@ export default function Home() {
 
 			<main className={styles.main}>
 				<h1>This is a work in progress, clearly</h1>
-				<p>Don't be fooled by this apparent simplicity</p>
+				<p>Don&apos;t be fooled by this apparent simplicity</p>
 				<cite>
-					Everything is in my head, and I'll be updating this repo
-					frequently
+					Everything is in my head, and I&apos;ll be updating this
+					repo frequently
 				</cite>
 				<address>Trying new stuff and exploring advanced CSS</address>
 			</main>
