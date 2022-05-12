@@ -14,14 +14,17 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1>This is a title</h1>
-				<p>This is a paragraph</p>
-				<cite>THIS IS A CITE</cite>
-				<address>this one is an address</address>
+				<h1>This is a work in progress, clearly</h1>
+				<p>Don't be fooled by this apparent simplicity</p>
+				<cite>
+					Everything is in my head, and I'll be updating this repo
+					frequently
+				</cite>
+				<address>Trying new stuff and exploring advanced CSS</address>
 			</main>
 
-      <div className={styles.footer_wrapper}></div>
-      
+			<div className={styles.footer_wrapper}></div>
+
 			<footer className={styles.footer}>
 				<span>
 					<ul className={styles.contact}>
