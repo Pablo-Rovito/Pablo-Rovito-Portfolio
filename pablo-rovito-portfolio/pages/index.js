@@ -39,7 +39,8 @@ export default function Home() {
 					<li>
 						<a
 							href='https://api.whatsapp.com/send?phone=5492255570472'
-							target='_blank'>
+							/* target='_blank' */
+						>
 							<Image
 								priority
 								src='/images/WP.svg'
@@ -53,7 +54,8 @@ export default function Home() {
 					<li>
 						<a
 							href='http://www.linkedin.com/in/pablo-rovito-fullstack-dev'
-							target='_blank'>
+							/* target='_blank' */
+						>
 							<Image
 								priority
 								src='/images/LIn.svg'
@@ -67,7 +69,8 @@ export default function Home() {
 					<li>
 						<a
 							href='https://github.com/Pablo-Rovito'
-							target='_blank'>
+							/* target='_blank' */
+						>
 							<Image
 								priority
 								src='/images/GitHub-Mark-64px.png'
