@@ -27,9 +27,9 @@
 #logo::after {
 	content: '';
 	position: absolute;
-	left: 110%;
+	left: 107%;
 	bottom: 15%;
-	width: 2px;
+	width: 1px;
 	height: 70%;
 	background: linear-gradient(
 		to bottom,
@@ -92,7 +92,7 @@
 	z-index: 300;
 	font-size: 4rem;
 	font-weight: 100;
-	color: rgba(240, 255, 255, 0.4);
+	color: rgba(240, 255, 255, 0.6);
 }
 
 #info {
@@ -104,7 +104,6 @@
 #info .slider_title_wrapper {
 	position: absolute;
 	top: 2rem;
-
 	left: calc(100% - 2rem);
 	transform-origin: 0% 0%;
 	transform: rotate(90deg);
@@ -127,8 +126,8 @@
 	position: relative;
 	top: 0;
 	left: 0;
-	font-size: 4vmax;
-	text-align: center;
+	font-size: 5rem;
+	line-height: 0;
 }
 
 #info .about {
@@ -138,6 +137,7 @@
 	text-align: right;
 	max-width: 100%;
 	font-size: smaller;
+	font-weight: 300;
 }
 
 .slides {
@@ -170,7 +170,7 @@
 }
 
 #slider_nav .current {
-	color: azure;
+	color: rgba(255, 0, 255);
 	font-weight: 500;
 	justify-self: center;
 }
@@ -191,18 +191,28 @@
 }
 
 #slider_nav .sep::before {
-	background-color: azure;
+	background-color: rgba(255, 0, 255);
 	left: 0;
 }
 
 #slider_nav .sep::after {
-	background-color: black;
+	background-color: azure;
 	right: 0;
 }
 
 #slider_nav .total {
-	color: black;
+	color: azure;
 	justify-self: center;
+}
+
+#slider_nav .total::before {
+	content: '';
+	position: absolute;
+	right: 0.5rem;
+	height: 100%;
+	width: 4rem;
+	background-color: rgba(0, 0, 0, 0.75);
+	z-index: -1;
 }
 #slider_nav > span {
 	font-size: 1.5rem;
