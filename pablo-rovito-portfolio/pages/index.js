@@ -55,6 +55,7 @@ export default function Home() {
 									priority
 									src='/images/GitHub-Mark-64px.png'
 									className={styles.icon}
+									id={styles.github}
 									height={30}
 									width={30}
 									alt=''
