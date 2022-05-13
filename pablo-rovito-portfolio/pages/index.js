@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import Slider from '../components/slider';
 
 export default function Home() {
 	return (
@@ -21,6 +22,9 @@ export default function Home() {
 					repo frequently
 				</cite>
 				<address>Trying new stuff and exploring advanced CSS</address>
+				<div className={styles.slider_container}>
+					<Slider />
+				</div>
 			</main>
 
 			<div className={styles.footer_wrapper}></div>
