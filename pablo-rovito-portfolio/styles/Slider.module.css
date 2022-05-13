@@ -22,6 +22,7 @@
 	top: 1rem;
 	left: 2rem;
 	z-index: 300;
+	text-transform: uppercase;
 }
 
 #logo::after {
@@ -87,8 +88,9 @@
 
 #slides_aux .slide_title {
 	position: absolute;
+	width: auto;
 	left: 2rem;
-	top: 65vh;
+	top: 83vh;
 	z-index: 300;
 	font-size: 4rem;
 	font-weight: 100;
@@ -114,6 +116,7 @@
 	top: 0;
 	left: 4px;
 	height: 12px;
+	border-radius: 2px 0 0 2px;
 	width: 100%;
 	background: linear-gradient(
 		to right,
@@ -213,6 +216,7 @@
 	width: 4rem;
 	background-color: rgba(0, 0, 0, 0.75);
 	z-index: -1;
+	border-radius: 0 2px 2px 0;
 }
 #slider_nav > span {
 	font-size: 1.5rem;
