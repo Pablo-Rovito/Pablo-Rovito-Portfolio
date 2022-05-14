@@ -46,9 +46,7 @@ export default function Slider() {
 			<div id={styles.info}>
 				<div className={styles.slider_title_wrapper}>
 					<span className={styles.line}></span>
-					<h1 className={styles.slider_title}>
-						<span>Projects</span>
-					</h1>
+					<span className={styles.slider_title}>Projects</span>
 				</div>
 				<div className={styles.about}>
 					<p>A NextJS/Typescript/CSS portfolio</p>
