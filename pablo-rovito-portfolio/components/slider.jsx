@@ -1,4 +1,10 @@
 import styles from '../styles/Slider.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faAngleDoubleLeft,
+	faAngleDoubleRight,
+	faArrowUpLong,
+} from '@fortawesome/free-solid-svg-icons';
 
 const backgrounds = [
 	{
@@ -25,6 +31,9 @@ export default function Slider() {
 									<div
 										className={styles.slide_title}
 										key={background.id}>
+										<p>
+											<FontAwesomeIcon icon={faArrowUpLong} />
+										</p>
 										<a href={background.link}>
 											{background.title}
 										</a>
@@ -47,9 +56,13 @@ export default function Slider() {
 				</div>
 			</div>
 			<nav id={styles.slider_nav}>
-				<span className={styles.current}>XX</span>
+				<span className={styles.current}>
+					<FontAwesomeIcon icon={faAngleDoubleLeft} />
+				</span>
 				<span className={styles.sep}></span>
-				<span className={styles.total}>{backgrounds.length}</span>
+				<span className={styles.total}>
+					<FontAwesomeIcon icon={faAngleDoubleRight} />
+				</span>
 			</nav>
 		</main>
 	);
