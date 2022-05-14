@@ -23,7 +23,6 @@
 	left: 0;
 	padding: 1.5rem;
 	z-index: 300;
-	text-transform: uppercase;
 }
 
 #logo::after {
@@ -31,15 +30,16 @@
 	position: absolute;
 	right: 0;
 	bottom: 30%;
-	width: 1px;
+	width: 2px;
 	height: 40%;
 	background: rgba(0, 0, 0, 0.75);
 }
 
 #logo .logo_text {
+	text-transform: uppercase;
 	position: relative;
 	font-size: 3rem;
-	font-weight: 200;
+	font-weight: 300;
 	color: #262626;
 }
 
@@ -97,15 +97,14 @@
 	position: absolute;
 	width: auto;
 	padding: 4px 2rem;
-	border-radius: 2px;
-	left: 3%;
-	bottom: 5%;
+	border-radius: 0 2px 2px 0;
+	left: 0;
+	bottom: 10%;
 	z-index: 300;
 	font-size: 4rem;
-	font-weight: 200;
-	color: black;
-	background-color: rgba(255, 255, 255, 0.5);
-	backdrop-filter: blur(1px);
+	font-weight: 100;
+	color: azure;
+	background-color: rgba(0, 0, 0, 0.75);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -113,17 +112,29 @@
 	overflow: hidden;
 }
 
+.slide_title p {
+	position: absolute;
+	left: 4%;
+	transition: all 0.2s ease-in-out;
+	font-size: 2rem;
+	color: rgb(0, 255, 255);
+	transform: translateY(4rem) rotate(-45deg);
+}
+
 .slide_title a {
 	transition: all 0.2s ease-in-out;
 }
 
-.slide_title a:hover {
+.slide_title:hover a {
 	transform: translateX(2rem);
-	color: black;
+}
+
+.slide_title:hover p {
+	transform: translateY(0) rotate(45deg);
 }
 
 .slide_title:hover {
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(1px);
 }
 
 #info {
@@ -186,7 +197,7 @@
 #slider_nav {
 	position: absolute;
 	width: 9rem;
-	top: 20%;
+	top: 22%;
 	left: calc(80% - 4.5rem);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -203,7 +214,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 2rem;
+	font-size: 1.5rem;
+	padding: 0.5rem 0;
 	transition: all 0.2s ease-in-out;
 	cursor: pointer;
 }

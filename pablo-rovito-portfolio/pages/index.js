@@ -3,7 +3,12 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Slider from '../components/slider';
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/fontawesome-free';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faBars,
+	faAngleDoubleDown,
+	faAngleDoubleUp,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
 	const [visible, setVisible] = useState(false);
@@ -34,7 +39,14 @@ export default function Home() {
 							: styles.contact_button_hidden
 					}
 					onClick={(e) => changeFooterClass(e)}>
-					<span>MENU</span>
+					<p>
+						<FontAwesomeIcon
+							icon={visible ? faAngleDoubleUp : faAngleDoubleDown}
+						/>
+					</p>
+					<span>
+						<FontAwesomeIcon icon={faBars} />
+					</span>
 				</button>
 			}
 			<footer className={visible ? styles.footer : styles.footer_hidden}>
@@ -98,6 +110,13 @@ export default function Home() {
 						</a>
 					</li>
 				</ul>
+				<div className={styles.links}>
+					<a href='caca' id={styles.projects_link}>
+						Projects
+					</a>
+					<a>Curriculum</a>
+					<a>Bio</a>
+				</div>
 			</footer>
 		</div>
 	);
