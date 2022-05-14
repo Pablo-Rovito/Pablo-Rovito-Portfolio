@@ -21,22 +21,14 @@ export default function Slider() {
 						return (
 							<div className={styles.slide} key={background.id}>
 								<div className={styles.abs_mask}>
+									<div className={styles.slide_image}></div>
 									<div
-										className={styles.slide_image}
-										style={{
-											backgroundImage: `url(${background.img})`,
-										}}></div>
-								</div>
-								<div
-									id={styles.slides_aux}
-									className={styles.slides_mask}>
-									<h2
 										className={styles.slide_title}
 										key={background.id}>
 										<a href={background.link}>
 											{background.title}
 										</a>
-									</h2>
+									</div>
 								</div>
 							</div>
 						);

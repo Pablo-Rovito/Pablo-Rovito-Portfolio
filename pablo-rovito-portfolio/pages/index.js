@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Slider from '../components/slider';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/fontawesome-free';
 
 export default function Home() {
 	const [visible, setVisible] = useState(false);
@@ -25,15 +26,17 @@ export default function Home() {
 			<main className={styles.main}>
 				<Slider />
 			</main>
-			{<button
-				className={
-					visible
-						? styles.contact_button
-						: styles.contact_button_hidden
-				}
-				onClick={(e) => changeFooterClass(e)}>
-				CONTACT
-			</button>}
+			{
+				<button
+					className={
+						visible
+							? styles.contact_button
+							: styles.contact_button_hidden
+					}
+					onClick={(e) => changeFooterClass(e)}>
+					<span>MENU</span>
+				</button>
+			}
 			<footer className={visible ? styles.footer : styles.footer_hidden}>
 				<ul className={styles.contact}>
 					<li>
