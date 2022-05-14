@@ -25,7 +25,7 @@ export default function Home() {
 			<main className={styles.main}>
 				<Slider />
 			</main>
-			<button
+			{<button
 				className={
 					visible
 						? styles.contact_button
@@ -33,7 +33,7 @@ export default function Home() {
 				}
 				onClick={(e) => changeFooterClass(e)}>
 				CONTACT
-			</button>
+			</button>}
 			<footer className={visible ? styles.footer : styles.footer_hidden}>
 				<ul className={styles.contact}>
 					<li>
