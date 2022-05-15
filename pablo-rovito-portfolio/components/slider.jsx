@@ -42,8 +42,6 @@ const projectsInfo = [
 	},
 ];
 
-/////////////////////////////////////METER TRANSICIÓN ENTRE PROYECTOS, HABRÁ Q MAPEAR CADA PROYECTO Y DAR ESTILO SEGÚN EL INDEX, COMO EN LAS IMGGALLERY/////////////////////////////////////
-
 export default function Slider() {
 	useEffect(() => {
 		document

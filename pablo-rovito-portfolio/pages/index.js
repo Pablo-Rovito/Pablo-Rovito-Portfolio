@@ -1,27 +1,24 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import Layout from './layout';
 import Slider from '../components/slider';
-import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faBars,
-	faAngleDoubleDown,
-	faAngleDoubleUp,
-} from '@fortawesome/free-solid-svg-icons';
+//import Curriculum from '../components/curriculum';
+import { useEffect } from 'react';
+
+/////////////////////////////////////METER TRANSICIÓN ENTRE PROYECTOS, HABRÁ Q MAPEAR CADA PROYECTO Y DAR ESTILO SEGÚN EL INDEX, COMO EN LAS IMGGALLERY/////////////////////////////////////
+
+/////////////////////////////////////CAMBIAR ÍCONO DEL HEADER/////////////////////////////////////
+
+/////////////////////////////////////SUMAR 2DA ANIMACIÓN VERTICAL A INDICADOR DEL BOTÓN DE MENÚ, PARA HACER MÁS EVIDENTE LA ACCIÓN/////////////////////////////////////
+
+/////////////////////////////////////INCLUIR RUTAS DINÁMICAS EN LA NAVEGACIÓN PARA QUE LOS LINKS DEL MENÚ FUNCIONEN MÁS SIMILAR A REACT/////////////////////////////////////
+
+/////////////////////////////////////MAILTO DEBERÍA CAMBIAR A UN DROPDOWN CON TRANSLATEY ONHOVER QUE MUESTRE UN FORM CON BOTÓN SEND/////////////////////////////////////
 
 export default function Home() {
 	useEffect(() => {
 		document?.getElementById(styles.container).classList.add(styles.ready);
 	}, []);
-
-	const [visible, setVisible] = useState(false);
-
-	function changeFooterClass(e) {
-		e.preventDefault();
-		setVisible((prev) => !prev);
-	}
 
 	return (
 		<div id={styles.container} className={styles.container}>
@@ -33,104 +30,10 @@ export default function Home() {
 				/>
 			</Head>
 
-			{
-				<main className={styles.main}>
-					<Slider />
-				</main>
-			}
-			{
-				<button
-					className={
-						visible
-							? styles.contact_button
-							: styles.contact_button_hidden
-					}
-					onClick={(e) => changeFooterClass(e)}>
-					<p>
-						<FontAwesomeIcon
-							icon={visible ? faAngleDoubleUp : faAngleDoubleDown}
-						/>
-					</p>
-					<span>
-						<FontAwesomeIcon icon={faBars} />
-					</span>
-				</button>
-			}
-			<footer className={visible ? styles.footer : styles.footer_hidden}>
-				<ul className={styles.contact}>
-					<li>
-						<a
-							href='https://api.whatsapp.com/send?phone=5492255570472'
-							target='_blank'
-							rel='noopener noreferrer'>
-							<Image
-								priority
-								src='/images/WP.svg'
-								className={styles.icon}
-								height={30}
-								width={30}
-								alt=''
-							/>
-						</a>
-					</li>
-					<li>
-						<a
-							href='http://www.linkedin.com/in/pablo-rovito-fullstack-dev'
-							target='_blank'
-							rel='noopener noreferrer'>
-							<Image
-								priority
-								src='/images/LIn.svg'
-								className={styles.icon}
-								height={30}
-								width={30}
-								alt=''
-							/>
-						</a>
-					</li>
-					<li>
-						<a
-							href='https://github.com/Pablo-Rovito'
-							target='_blank'
-							rel='noopener noreferrer'>
-							<Image
-								priority
-								src='/images/GitHub-Mark-64px.png'
-								className={styles.icon}
-								id={styles.github}
-								height={30}
-								width={30}
-								alt=''
-							/>
-						</a>
-					</li>
-					<li>
-						<Link href='mailto: pablo.rovito@outlook.com'>
-							<a>
-								<Image
-									priority
-									src='/images/gmail.svg'
-									className={styles.icon}
-									height={30}
-									width={30}
-									alt=''
-								/>
-							</a>
-						</Link>
-					</li>
-				</ul>
-				<div className={styles.links}>
-					<Link href='/'>
-						<a>Projects</a>
-					</Link>
-					<Link href='/curriculum'>
-						<a>Curriculum</a>
-					</Link>
-					<Link href='/bio'>
-						<a>Bio</a>
-					</Link>
-				</div>
-			</footer>
+			<Layout>
+				<Slider />
+				{/* 				<Curriculum /> */}
+			</Layout>
 		</div>
 	);
 }
