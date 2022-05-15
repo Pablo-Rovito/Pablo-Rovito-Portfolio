@@ -8,6 +8,10 @@ import {
 	faBars,
 	faAngleDoubleDown,
 	faAngleDoubleUp,
+	faHouse,
+	faAngleDoubleRight,
+	faLaptopCode,
+	faImagePortrait,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function Layout({ children }) {
@@ -112,14 +116,35 @@ export default function Layout({ children }) {
 					</li>
 				</ul>
 				<div className={styles.links}>
+					<Link href='/'>
+						<a id={styles.bio}>
+							<span>Bio</span>
+							<span id={styles.arrow}>
+								<FontAwesomeIcon icon={faAngleDoubleRight} />
+							</span>
+							<span id={styles.house}>
+								<FontAwesomeIcon icon={faHouse} />
+							</span>
+						</a>
+					</Link>
 					<Link href='/projects'>
-						<a>Projects</a>
+						<a id={styles.projects}>
+							<span id={styles.projects_title}>Projects</span>
+							<span id={styles.arrow}>
+								{`<h1>Hire me!!</h1>`}
+							</span>
+							<span id={styles.house}>
+								<FontAwesomeIcon icon={faLaptopCode} />
+							</span>
+						</a>
 					</Link>
 					<Link href='/curriculum'>
-						<a>Curriculum</a>
-					</Link>
-					<Link href='/'>
-						<a>Bio</a>
+						<a id={styles.curriculum}>
+							<span>Curriculum</span>
+							<span id={styles.cv}>
+								<FontAwesomeIcon icon={faImagePortrait} />
+							</span>
+						</a>
 					</Link>
 				</div>
 			</footer>

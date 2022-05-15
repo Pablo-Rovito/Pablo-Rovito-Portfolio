@@ -54,6 +54,9 @@ export default function Slider() {
 
 	function changeProject(e, action) {
 		e.preventDefault();
+		document
+			?.getElementById(styles.hero_slider)
+			.classList.add(styles.initialized);
 		setP(
 			action === 'next'
 				? p === projectsInfo.length - 1
@@ -102,9 +105,9 @@ export default function Slider() {
 						<span className={styles.slider_title}>Projects</span>
 					</div>
 					<div className={styles.about}>
-						<p>A NextJS/Typescript/CSS portfolio</p>
+						<p>A NextJS/pure CSS portfolio</p>
 						<br />
-						<p>With its own API REST</p>
+						<p>Coming up: API + Typescript</p>
 					</div>
 				</div>
 				<nav id={styles.slider_nav}>

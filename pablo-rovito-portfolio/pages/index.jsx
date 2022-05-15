@@ -3,14 +3,6 @@ import styles from '../styles/Home.module.css';
 import Layout from '../components/layout';
 import { useEffect } from 'react';
 
-/////////////////////////////////////METER TRANSICIÓN ENTRE PROYECTOS, HABRÁ Q MAPEAR CADA PROYECTO Y DAR ESTILO SEGÚN EL INDEX, COMO EN LAS IMGGALLERY/////////////////////////////////////
-
-/////////////////////////////////////CAMBIAR ÍCONO DEL HEADER/////////////////////////////////////
-
-/////////////////////////////////////SUMAR 2DA ANIMACIÓN VERTICAL A INDICADOR DEL BOTÓN DE MENÚ, PARA HACER MÁS EVIDENTE LA ACCIÓN/////////////////////////////////////
-
-/////////////////////////////////////INCLUIR RUTAS DINÁMICAS EN LA NAVEGACIÓN PARA QUE LOS LINKS DEL MENÚ FUNCIONEN MÁS SIMILAR A REACT/////////////////////////////////////
-
 /////////////////////////////////////MAILTO DEBERÍA CAMBIAR A UN DROPDOWN CON TRANSLATEY ONHOVER QUE MUESTRE UN FORM CON BOTÓN SEND/////////////////////////////////////
 
 export default function Home() {
