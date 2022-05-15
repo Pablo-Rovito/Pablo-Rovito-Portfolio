@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Slider from '../components/slider';
 import { useState, useEffect } from 'react';
@@ -32,9 +33,11 @@ export default function Home() {
 				/>
 			</Head>
 
-		{	<main className={styles.main}>
-				<Slider />
-			</main>}
+			{
+				<main className={styles.main}>
+					<Slider />
+				</main>
+			}
 			{
 				<button
 					className={
@@ -102,22 +105,30 @@ export default function Home() {
 						</a>
 					</li>
 					<li>
-						<a href='mailto: pablo.rovito@outlook.com'>
-							<Image
-								priority
-								src='/images/gmail.svg'
-								className={styles.icon}
-								height={30}
-								width={30}
-								alt=''
-							/>
-						</a>
+						<Link href='mailto: pablo.rovito@outlook.com'>
+							<a>
+								<Image
+									priority
+									src='/images/gmail.svg'
+									className={styles.icon}
+									height={30}
+									width={30}
+									alt=''
+								/>
+							</a>
+						</Link>
 					</li>
 				</ul>
 				<div className={styles.links}>
-					<a href='/'>Projects</a>
-					<a href='/curriculum'>Curriculum</a>
-					<a href='/bio'>Bio</a>
+					<Link href='/'>
+						<a>Projects</a>
+					</Link>
+					<Link href='/curriculum'>
+						<a>Curriculum</a>
+					</Link>
+					<Link href='/bio'>
+						<a>Bio</a>
+					</Link>
 				</div>
 			</footer>
 		</div>

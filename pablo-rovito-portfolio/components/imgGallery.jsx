@@ -5,13 +5,13 @@ export default function Slider({ images }) {
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
-			setCounter(counter === images.length - 1 ? 0 : counter + 1);
+			setCounter(counter === images?.length - 1 ? 0 : counter + 1);
 		}, 4500);
 
 		return () => {
 			clearTimeout(timeout);
 		};
-	}, [counter]);
+	}, [counter, images?.length]);
 
 	return (
 		<div className={styles.container}>
