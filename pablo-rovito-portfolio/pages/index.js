@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Layout from './layout';
 import Slider from '../components/slider';
-//import Curriculum from '../components/curriculum';
+import Curriculum from '../components/curriculum';
 import { useEffect } from 'react';
 
 /////////////////////////////////////METER TRANSICIÓN ENTRE PROYECTOS, HABRÁ Q MAPEAR CADA PROYECTO Y DAR ESTILO SEGÚN EL INDEX, COMO EN LAS IMGGALLERY/////////////////////////////////////
@@ -31,8 +31,8 @@ export default function Home() {
 			</Head>
 
 			<Layout>
-				<Slider />
-				{/* 				<Curriculum /> */}
+				{/* <Slider /> */}
+				{				<Curriculum />}
 			</Layout>
 		</div>
 	);
