@@ -209,3 +209,11 @@
 .links a:hover {
 	transform: translateY(6px);
 }
+
+.container .contact_button_hidden {
+	transform: translateY(-100%);
+}
+
+.container.ready .contact_button_hidden {
+	transform: translateY(0);
+}

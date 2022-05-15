@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Slider from '../components/slider';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBars,
@@ -18,8 +18,12 @@ export default function Home() {
 		setVisible((prev) => !prev);
 	}
 
+	useEffect(() => {
+		document?.getElementById(styles.container).classList.add(styles.ready);
+	}, []);
+
 	return (
-		<div className={styles.container}>
+		<div id={styles.container} className={styles.container}>
 			<Head>
 				<title>Pablo Rovito Fullstack Dev</title>
 				<meta
