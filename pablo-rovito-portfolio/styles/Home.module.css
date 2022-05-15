@@ -44,6 +44,7 @@
 	transition: all 0.2s ease-in-out;
 	font-size: 0.8rem;
 	color: rgb(255, 0, 255);
+	opacity: 0;
 }
 
 .contact_button_hidden p {
@@ -83,6 +84,7 @@
 .contact_button_hidden:hover p {
 	transform: translateX(0);
 	font-weight: 300;
+	opacity: 1;
 }
 
 .contact_button:hover span {
@@ -206,4 +208,12 @@
 
 .links a:hover {
 	transform: translateY(6px);
+}
+
+.container .contact_button_hidden {
+	transform: translateY(-100%);
+}
+
+.container.ready .contact_button_hidden {
+	transform: translateY(0);
 }
