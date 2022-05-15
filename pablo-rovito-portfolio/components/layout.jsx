@@ -1,17 +1,20 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Slider from '../components/slider';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBars,
 	faAngleDoubleDown,
 	faAngleDoubleUp,
+	faHouse,
+	faAngleDoubleRight,
+	faLaptopCode,
+	faImagePortrait,
 } from '@fortawesome/free-solid-svg-icons';
 
-export default function Home() {
+export default function Layout({ children }) {
 	useEffect(() => {
 		document?.getElementById(styles.container).classList.add(styles.ready);
 	}, []);
@@ -32,30 +35,23 @@ export default function Home() {
 					content='My NextJS-Typescript portfolio'
 				/>
 			</Head>
-
-			{
-				<main className={styles.main}>
-					<Slider />
-				</main>
-			}
-			{
-				<button
-					className={
-						visible
-							? styles.contact_button
-							: styles.contact_button_hidden
-					}
-					onClick={(e) => changeFooterClass(e)}>
-					<p>
-						<FontAwesomeIcon
-							icon={visible ? faAngleDoubleUp : faAngleDoubleDown}
-						/>
-					</p>
-					<span>
-						<FontAwesomeIcon icon={faBars} />
-					</span>
-				</button>
-			}
+			<main className={styles.main}>{children}</main>
+			<button
+				className={
+					visible
+						? styles.contact_button
+						: styles.contact_button_hidden
+				}
+				onClick={(e) => changeFooterClass(e)}>
+				<p>
+					<FontAwesomeIcon
+						icon={visible ? faAngleDoubleUp : faAngleDoubleDown}
+					/>
+				</p>
+				<span>
+					<FontAwesomeIcon icon={faBars} />
+				</span>
+			</button>
 			<footer className={visible ? styles.footer : styles.footer_hidden}>
 				<ul className={styles.contact}>
 					<li>
@@ -121,13 +117,34 @@ export default function Home() {
 				</ul>
 				<div className={styles.links}>
 					<Link href='/'>
-						<a>Projects</a>
+						<a id={styles.bio}>
+							<span>Bio</span>
+							<span id={styles.arrow}>
+								<FontAwesomeIcon icon={faAngleDoubleRight} />
+							</span>
+							<span id={styles.house}>
+								<FontAwesomeIcon icon={faHouse} />
+							</span>
+						</a>
+					</Link>
+					<Link href='/projects'>
+						<a id={styles.projects}>
+							<span id={styles.projects_title}>Projects</span>
+							<span id={styles.arrow}>
+								{`<h1>Hire me!!</h1>`}
+							</span>
+							<span id={styles.house}>
+								<FontAwesomeIcon icon={faLaptopCode} />
+							</span>
+						</a>
 					</Link>
 					<Link href='/curriculum'>
-						<a>Curriculum</a>
-					</Link>
-					<Link href='/bio'>
-						<a>Bio</a>
+						<a id={styles.curriculum}>
+							<span>Curriculum</span>
+							<span id={styles.cv}>
+								<FontAwesomeIcon icon={faImagePortrait} />
+							</span>
+						</a>
 					</Link>
 				</div>
 			</footer>
