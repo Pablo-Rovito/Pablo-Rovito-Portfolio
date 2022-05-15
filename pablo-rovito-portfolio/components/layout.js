@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,8 +24,14 @@ export default function Layout({ children }) {
 
 	return (
 		<div id={styles.container} className={styles.container}>
+			<Head>
+				<title>Pablo Rovito Fullstack Dev</title>
+				<meta
+					name='description'
+					content='My NextJS-Typescript portfolio'
+				/>
+			</Head>
 			<main className={styles.main}>{children}</main>
-
 			<button
 				className={
 					visible
@@ -41,7 +48,6 @@ export default function Layout({ children }) {
 					<FontAwesomeIcon icon={faBars} />
 				</span>
 			</button>
-
 			<footer className={visible ? styles.footer : styles.footer_hidden}>
 				<ul className={styles.contact}>
 					<li>
@@ -106,13 +112,13 @@ export default function Layout({ children }) {
 					</li>
 				</ul>
 				<div className={styles.links}>
-					<Link href='/'>
+					<Link href='/projects'>
 						<a>Projects</a>
 					</Link>
 					<Link href='/curriculum'>
 						<a>Curriculum</a>
 					</Link>
-					<Link href='/bio'>
+					<Link href='/'>
 						<a>Bio</a>
 					</Link>
 				</div>
