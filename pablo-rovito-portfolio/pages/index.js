@@ -11,16 +11,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
+	useEffect(() => {
+		document?.getElementById(styles.container).classList.add(styles.ready);
+	}, []);
+
 	const [visible, setVisible] = useState(false);
 
 	function changeFooterClass(e) {
 		e.preventDefault();
 		setVisible((prev) => !prev);
 	}
-
-	useEffect(() => {
-		document?.getElementById(styles.container).classList.add(styles.ready);
-	}, []);
 
 	return (
 		<div id={styles.container} className={styles.container}>
@@ -32,9 +32,9 @@ export default function Home() {
 				/>
 			</Head>
 
-			<main className={styles.main}>
+		{	<main className={styles.main}>
 				<Slider />
-			</main>
+			</main>}
 			{
 				<button
 					className={
@@ -58,8 +58,8 @@ export default function Home() {
 					<li>
 						<a
 							href='https://api.whatsapp.com/send?phone=5492255570472'
-							/* target='_blank' */
-						>
+							target='_blank'
+							rel='noopener noreferrer'>
 							<Image
 								priority
 								src='/images/WP.svg'
@@ -73,8 +73,8 @@ export default function Home() {
 					<li>
 						<a
 							href='http://www.linkedin.com/in/pablo-rovito-fullstack-dev'
-							/* target='_blank' */
-						>
+							target='_blank'
+							rel='noopener noreferrer'>
 							<Image
 								priority
 								src='/images/LIn.svg'
@@ -88,8 +88,8 @@ export default function Home() {
 					<li>
 						<a
 							href='https://github.com/Pablo-Rovito'
-							/* target='_blank' */
-						>
+							target='_blank'
+							rel='noopener noreferrer'>
 							<Image
 								priority
 								src='/images/GitHub-Mark-64px.png'
@@ -115,11 +115,9 @@ export default function Home() {
 					</li>
 				</ul>
 				<div className={styles.links}>
-					<a href='caca' id={styles.projects_link}>
-						Projects
-					</a>
-					<a>Curriculum</a>
-					<a>Bio</a>
+					<a href='/'>Projects</a>
+					<a href='/curriculum'>Curriculum</a>
+					<a href='/bio'>Bio</a>
 				</div>
 			</footer>
 		</div>

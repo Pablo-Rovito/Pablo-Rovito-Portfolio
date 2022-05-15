@@ -87,10 +87,6 @@
 	left: 3%;
 	width: 94%;
 	height: 90%;
-	border-radius: 2px;
-	background-image: url('https://user-images.githubusercontent.com/91141985/165199111-791edd30-58da-45fd-b36a-54a0fdc5e9ce.png');
-	background-size: cover;
-	background-position: center;
 	z-index: 100;
 }
 
@@ -115,7 +111,7 @@
 
 .slide_title p {
 	position: absolute;
-	left: 2%;
+	left: 1.25rem;
 	transition: all 0.2s ease-in-out;
 	font-size: 1.5rem;
 	color: rgb(0, 255, 255, 0.9);
@@ -212,6 +208,7 @@
 
 #slider_nav .current,
 #slider_nav .total {
+	background-color: transparent;
 	width: 100%;
 	height: 100%;
 	font-weight: 100;
@@ -267,7 +264,7 @@
 	font-weight: 300;
 }
 
-#slider_nav > span {
+#slider_nav > button {
 	font-size: 1.5rem;
 }
 
@@ -278,14 +275,14 @@
 	transition: transform 1s ease-in-out;
 }
 
-#hero_slider .slider_title > span {
+#hero_slider .slider_title > button {
 	display: block;
 	transform: translate3d(0, -100%, 0);
 	transition: transform 0.5s 1s;
 }
 
 #hero_slider.ready #info,
-#hero-slider.ready .slider_title > span {
+#hero-slider.ready .slider_title > button {
 	transform: translate3d(0, 0, 0);
 }
 
@@ -310,7 +307,7 @@
 	opacity: 1;
 }
 
-#hero_slider .slider_title > span {
+#hero_slider .slider_title > button {
 	display: block;
 	transform: translate3d(0, -100%, 0);
 	transition: transform 0.5s 1.5s;
