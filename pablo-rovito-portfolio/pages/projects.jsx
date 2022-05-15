@@ -1,4 +1,5 @@
 import styles from '../styles/Slider.module.css';
+import Layout from '../components/layout';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -6,7 +7,7 @@ import {
 	faAngleDoubleRight,
 	faDisplay,
 } from '@fortawesome/free-solid-svg-icons';
-import ImgGallery from './imgGallery';
+import ImgGallery from '../components/imgGallery';
 
 const projectsInfo = [
 	{
@@ -66,58 +67,60 @@ export default function Slider() {
 	let project = projectsInfo[p];
 
 	return (
-		<main id={styles.hero_slider}>
-			<div id={styles.logo} className={styles.mask}>
-				<span className={styles.logo_text}>Pablo Rovito</span>
-			</div>
-			<div id={styles.slideshow}>
-				<div id={styles.slides_main} className={styles.slides}>
-					<div className={styles.slide} key={project.id}>
-						<div className={styles.abs_mask}>
-							<div className={styles.slide_image}>
-								<ImgGallery images={project.img} />
-							</div>
-							<div
-								className={styles.slide_title}
-								key={project.id}>
-								<p>
-									<FontAwesomeIcon icon={faDisplay} />
-								</p>
-								<a
-									href={project.link}
-									target='_blank'
-									rel='noopener noreferrer'>
-									{project.title}
-								</a>
+		<Layout>
+			<main id={styles.hero_slider}>
+				<div id={styles.logo} className={styles.mask}>
+					<span className={styles.logo_text}>Pablo Rovito</span>
+				</div>
+				<div id={styles.slideshow}>
+					<div id={styles.slides_main} className={styles.slides}>
+						<div className={styles.slide} key={project.id}>
+							<div className={styles.abs_mask}>
+								<div className={styles.slide_image}>
+									<ImgGallery images={project.img} />
+								</div>
+								<div
+									className={styles.slide_title}
+									key={project.id}>
+									<p>
+										<FontAwesomeIcon icon={faDisplay} />
+									</p>
+									<a
+										href={project.link}
+										target='_blank'
+										rel='noopener noreferrer'>
+										{project.title}
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id={styles.info}>
-				<div className={styles.slider_title_wrapper}>
-					<span className={styles.line}></span>
-					<span className={styles.slider_title}>Projects</span>
+				<div id={styles.info}>
+					<div className={styles.slider_title_wrapper}>
+						<span className={styles.line}></span>
+						<span className={styles.slider_title}>Projects</span>
+					</div>
+					<div className={styles.about}>
+						<p>A NextJS/Typescript/CSS portfolio</p>
+						<br />
+						<p>With its own API REST</p>
+					</div>
 				</div>
-				<div className={styles.about}>
-					<p>A NextJS/Typescript/CSS portfolio</p>
-					<br />
-					<p>With its own API REST</p>
-				</div>
-			</div>
-			<nav id={styles.slider_nav}>
-				<button
-					className={styles.current}
-					onClick={(e) => changeProject(e, 'prev')}>
-					<FontAwesomeIcon icon={faAngleDoubleLeft} />
-				</button>
-				<span className={styles.sep}></span>
-				<button
-					className={styles.total}
-					onClick={(e) => changeProject(e, 'next')}>
-					<FontAwesomeIcon icon={faAngleDoubleRight} />
-				</button>
-			</nav>
-		</main>
+				<nav id={styles.slider_nav}>
+					<button
+						className={styles.current}
+						onClick={(e) => changeProject(e, 'prev')}>
+						<FontAwesomeIcon icon={faAngleDoubleLeft} />
+					</button>
+					<span className={styles.sep}></span>
+					<button
+						className={styles.total}
+						onClick={(e) => changeProject(e, 'next')}>
+						<FontAwesomeIcon icon={faAngleDoubleRight} />
+					</button>
+				</nav>
+			</main>
+		</Layout>
 	);
 }
