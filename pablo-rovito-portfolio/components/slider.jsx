@@ -1,9 +1,10 @@
 import styles from '../styles/Slider.module.css';
+import { Component, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faAngleDoubleLeft,
 	faAngleDoubleRight,
-	faArrowUpLong,
+	faDisplay,
 } from '@fortawesome/free-solid-svg-icons';
 
 const backgrounds = [
@@ -16,6 +17,12 @@ const backgrounds = [
 ];
 
 export default function Slider() {
+	useEffect(() => {
+		document
+			?.getElementById(styles.hero_slider)
+			.classList.add(styles.ready);
+	}, []);
+
 	return (
 		<main id={styles.hero_slider}>
 			<div id={styles.logo} className={styles.mask}>
@@ -32,7 +39,7 @@ export default function Slider() {
 										className={styles.slide_title}
 										key={background.id}>
 										<p>
-											<FontAwesomeIcon icon={faArrowUpLong} />
+											<FontAwesomeIcon icon={faDisplay} />
 										</p>
 										<a href={background.link}>
 											{background.title}
