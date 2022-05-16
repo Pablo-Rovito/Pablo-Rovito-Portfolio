@@ -86,10 +86,8 @@ export default function Home() {
 								<span></span>
 							</p>
 							<p>
-								History is another thing that grabs my
-								attention, particularly if geopolitical events
-								are involved. It is a great dating topic, I
-								promise.
+								History and philosophy always grab my attention.
+								Great dating topics, those...
 							</p>
 							<p>
 								I am a big fan of outdoors, specially if
