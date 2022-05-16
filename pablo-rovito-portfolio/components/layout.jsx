@@ -130,8 +130,8 @@ export default function Layout({ children }) {
 					<Link href='/projects'>
 						<a id={styles.projects}>
 							<span id={styles.projects_title}>Projects</span>
-							<span id={styles.arrow}>
-								{`<h1>Hire me!!</h1>`}
+							<span id={styles.arrowtxt}>
+								{`<h1>Hire me!!</h1> <h1>Hire me!!</h1>`}
 							</span>
 							<span id={styles.house}>
 								<FontAwesomeIcon icon={faLaptopCode} />
