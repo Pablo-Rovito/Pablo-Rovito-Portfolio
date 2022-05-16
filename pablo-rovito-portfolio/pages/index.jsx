@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 import Layout from '../components/layout';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandPointer, faHandSpock } from '@fortawesome/free-solid-svg-icons';
+import { faHandPointer } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
 	useEffect(() => {
@@ -45,17 +45,12 @@ export default function Home() {
 			<Layout>
 				<div id={styles.bio_container}>
 					<div id={styles.greet}>
-						<h1>
-							Hi!{' '}
-							<FontAwesomeIcon
-								icon={faHandSpock}
-								id={styles.spock}
-							/>
-						</h1>
-						<h3>
-							Hope you are doing great, thanks for paying me a
-							visit!
-						</h3>
+						<div id={styles.greetAux}>
+							<div id={styles.greetAux2}>
+								<h1>Hi! </h1>
+								<h3>Hope you are doing great!</h3>
+							</div>
+						</div>
 					</div>
 					<header id={styles.header}>
 						<span id={styles.menu_direction}>
