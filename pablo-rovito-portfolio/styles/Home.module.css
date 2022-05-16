@@ -306,23 +306,111 @@
 	height: 100vh;
 }
 
-#bio_container #greet {
+#bio_container #greet,
+#bio_container #greetAux,
+#bio_container #greetAux2 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#bio_container #greet h1,
+#bio_container #greet h3 {
+	opacity: 0;
+	left: 0;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	position: absolute;
-	opacity: 0;
 }
 
-#bio_container #greet #spock {
-	transform-origin: 50% 100%;
-	animation-name: salute;
-	animation-duration: 0.4s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+#bio_container #greet h1 {
+	top: calc(50% - 4rem);
+}
+#bio_container #greet h3 {
+	top: 50%;
+}
+
+#bio_container #greet::after {
+	content: '';
+	position: absolute;
+	top: 45vh;
+	right: calc(50vw - 150px);
+	width: 300px;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgba(0, 255, 255) 0%,
+		rgba(255, 0, 255) 100%
+	);
+	transform-origin: 100% 0;
+	transform: rotate(-36deg);
+}
+
+#bio_container #greet::before {
+	content: '';
+	position: absolute;
+	top: 45vh;
+	right: calc(50vw - 150px);
+	width: 300px;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgba(0, 255, 255) 0%,
+		rgba(255, 0, 255) 100%
+	);
+	transform-origin: 0 0;
+
+	transform: rotate(36deg);
+}
+
+#bio_container #greetAux::after {
+	content: '';
+	position: absolute;
+	top: 45vh;
+	right: calc(50vw - 150px);
+	width: 300px;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgba(0, 255, 255) 0%,
+		rgba(255, 0, 255) 100%
+	);
+	transform-origin: 50% 50px;
+	transform: rotate(-72deg);
+}
+
+#bio_container #greetAux::before {
+	content: '';
+	position: absolute;
+	top: 45vh;
+	right: calc(50vw - 150px);
+	width: 300px;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgba(0, 255, 255) 0%,
+		rgba(255, 0, 255) 100%
+	);
+	transform-origin: 50% 50px;
+	transform: rotate(72deg);
+}
+
+#bio_container #greetAux2::before {
+	content: '';
+	position: absolute;
+	top: 45vh;
+	right: calc(50vw - 150px);
+	width: 300px;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgba(0, 255, 255) 0%,
+		rgba(255, 0, 255) 100%
+	);
+	transform-origin: 50% 50px;
+	transform: rotate(-72deg);
 }
 
 #bio_container header {
@@ -330,25 +418,6 @@
 	height: 15vh;
 	width: 100%;
 	overflow: hidden;
-}
-
-#bio_container header::after {
-	content: '';
-	position: absolute;
-	bottom: 5px;
-	left: 0;
-	width: 50%;
-	height: 1px;
-	background: linear-gradient(
-		to right,
-		rgba(0, 255, 255) 0%,
-		rgba(255, 0, 255) 100%
-	);
-	animation-name: moveX;
-	animation-duration: 7s;
-	animation-timing-function: linear;
-	animation-delay: 0.2s;
-	animation-iteration-count: infinite;
 }
 
 #bio_container header #menu_direction {
@@ -399,9 +468,26 @@
 		rgba(255, 0, 255) 100%
 	);
 	animation-name: moveY;
-	animation-duration: 7s;
+	animation-duration: 5s;
 	animation-timing-function: linear;
-	animation-delay: 0.2s;
+	animation-iteration-count: infinite;
+}
+
+#bio_container main::before {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 50%;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgba(0, 255, 255) 0%,
+		rgba(255, 0, 255) 100%
+	);
+	animation-name: moveX;
+	animation-duration: 8s;
+	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 }
 
@@ -469,11 +555,19 @@
 	visibility: hidden;
 }
 
-#bio_container.ready #greet {
+#bio_container.ready #greet h1 {
 	animation-name: greetGlow;
-	animation-duration: 3s;
+	animation-duration: 1.5s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1;
+}
+
+#bio_container.ready #greet h3 {
+	animation-name: greetGlow;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-delay: 1.5s;
 }
 
 #bio_container #header {
@@ -521,6 +615,62 @@
 	transition: opacity 0.3s ease-out 4s;
 }
 
+#bio_container #greet::after {
+	opacity: 1;
+	transform: rotate(-36deg) translateX(60vw);
+	transition: transform 0.3s ease-out 0.15s, opacity 0.2s ease-out 1.3s;
+}
+
+#bio_container.ready #greet::after {
+	opacity: 0;
+	transform: rotate(-36deg) translateX(0);
+}
+
+#bio_container #greet::before {
+	opacity: 1;
+	transform: rotate(36deg) translateX(60vw);
+	transition: transform 0.3s ease-out 0.6s, opacity 0.2s ease-out 1.3s;
+}
+
+#bio_container.ready #greet::before {
+	opacity: 0;
+	transform: rotate(36deg) translateX(0);
+}
+
+#bio_container #greetAux::after {
+	opacity: 1;
+	transform: rotate(-72deg) translateX(60vw);
+	transition: transform 0.3s ease-out 0.3s, opacity 0.2s ease-out 1.3s;
+}
+
+#bio_container.ready #greetAux::after {
+	opacity: 0;
+	transform: rotate(-72deg) translateX(0);
+}
+
+#bio_container #greetAux::before {
+	opacity: 1;
+	transform: rotate(72deg) translateX(60vw);
+	transition: transform 0.3s ease-out 0.45s, opacity 0.2s ease-out 1.3s;
+}
+
+#bio_container.ready #greetAux::before {
+	opacity: 0;
+	transform: rotate(72deg) translateX(0);
+}
+
+#bio_container #greetAux2::before {
+	opacity: 1;
+	transform: translateX(60vw);
+	transition: transform 0.3s ease-out, opacity 0.2s ease-out 1.3s;
+}
+
+#bio_container.ready #greetAux2::before {
+	opacity: 0;
+	transform: translateX(0);
+	
+}
+
 @keyframes contactArrowUp {
 	0% {
 		transform: translateY(3px);
@@ -530,24 +680,6 @@
 	}
 	100% {
 		transform: translateY(3px);
-	}
-}
-
-@keyframes salute {
-	0% {
-		transform: rotate(-30deg);
-	}
-	25% {
-		transform: rotate(0);
-	}
-	50% {
-		transform: rotate(30deg);
-	}
-	75% {
-		transform: rotate(0);
-	}
-	100% {
-		transform: rotate(-30deg);
 	}
 }
 
