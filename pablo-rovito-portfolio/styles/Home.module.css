@@ -237,7 +237,7 @@
 }
 
 .links #bio #arrow,
-.links #projects #arrow {
+.links #projects #arrowtxt {
 	position: absolute;
 	right: 1.2rem;
 	color: magenta;
@@ -245,12 +245,12 @@
 	opacity: 0;
 }
 
-.links #projects #arrow {
+.links #projects #arrowtxt {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	width: 100%;
+	width: 200%;
 	font-weight: 400;
 	text-transform: none;
 }
@@ -272,11 +272,11 @@
 	animation-iteration-count: infinite;
 }
 
-.links #projects:hover #arrow {
+.links #projects:hover #arrowtxt {
 	opacity: 1;
 	animation-name: codeInLaptop;
-	animation-duration: 2s;
-	animation-timing-function: ease-in-out;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
 	animation-delay: 0.2s;
 	animation-iteration-count: infinite;
 }
@@ -668,7 +668,6 @@
 #bio_container.ready #greetAux2::before {
 	opacity: 0;
 	transform: translateX(0);
-	
 }
 
 @keyframes contactArrowUp {
@@ -721,7 +720,7 @@
 	}
 
 	to {
-		transform: translateX(10rem);
+		transform: translateX(calc(10rem - 7px));
 	}
 }
 
