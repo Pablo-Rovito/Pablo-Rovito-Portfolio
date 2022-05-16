@@ -1,13 +1,16 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Layout from '../components/layout';
 import { useEffect } from 'react';
-
-/////////////////////////////////////MAILTO DEBERÍA CAMBIAR A UN DROPDOWN CON TRANSLATEY ONHOVER QUE MUESTRE UN FORM CON BOTÓN SEND/////////////////////////////////////
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHandPointer, faHandSpock } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
 	useEffect(() => {
-		document?.getElementById(styles.container).classList.add(styles.ready);
+		document
+			?.getElementById(styles.bio_container)
+			.classList.add(styles.ready);
 	}, []);
 
 	return (
@@ -40,7 +43,98 @@ export default function Home() {
 			</Head>
 
 			<Layout>
-				<h1>Hola</h1>
+				<div id={styles.bio_container}>
+					<div id={styles.greet}>
+						<h1>
+							Hi!{' '}
+							<FontAwesomeIcon
+								icon={faHandSpock}
+								id={styles.spock}
+							/>
+						</h1>
+						<h3>
+							Hope you are doing great, thanks for paying me a
+							visit!
+						</h3>
+					</div>
+					<header id={styles.header}>
+						<span id={styles.menu_direction}>
+							<span id={styles.txt}>
+								Projects, curriculum and contact over there!
+							</span>
+							<span>
+								<FontAwesomeIcon
+									icon={faHandPointer}
+									id={styles.pointer}
+								/>
+							</span>
+						</span>
+					</header>
+					<main>
+						<section id={styles.bio_text}>
+							<p>
+								<span>
+									I really do love creating very much indeed,
+									emphasis intended. It used to be channeled
+									through drawing, writing music, building
+									stuff and engineering design, and now
+								</span>
+								<span
+									style={{
+										color: 'magenta',
+										fontWeight: '400',
+									}}>
+									{' '}
+									coding{' '}
+								</span>
+								is my newfound passion.
+								<span></span>
+							</p>
+							<p>
+								History is another thing that grabs my
+								attention, particularly if geopolitical events
+								are involved. It is a great dating topic, I
+								promise.
+							</p>
+							<p>
+								I am a big fan of outdoors, specially if
+								mountains are involved. I raced in mountain bike
+								a couple of times, but I do trekking more often.
+								However, my girlfriend and my dog love the beach
+								so most of the time I end up there.
+							</p>
+						</section>
+						<div id={styles.portrait}>
+							<Image
+								priority
+								src='/images/cv.jpg'
+								className={styles.icon}
+								height={300}
+								width={300}
+								alt=''
+							/>
+						</div>
+					</main>
+					<footer>
+						<div id={styles.stack}>
+							<label>Stack</label>
+							<ul>
+								<li>React</li>
+								<li>NextJS</li>
+								<li>Javascript</li>
+								<li>Typescript</li>
+								<li>HTML / CSS</li>
+								<li>Express</li>
+								<li>Sequelize</li>
+								<li>PostgreSQL</li>
+								<li>NodeJS</li>
+								<li>some Python</li>
+								<li>some Ruby</li>
+								<li>some Matlab</li>
+							</ul>
+						</div>
+					</footer>
+				</div>
 			</Layout>
 		</div>
 	);
