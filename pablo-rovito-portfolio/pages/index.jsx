@@ -56,6 +56,7 @@ export default function Home() {
 						<span id={styles.menu_direction}>
 							<span id={styles.txt}>
 								Projects, curriculum and contact over there!
+								lalalalala
 							</span>
 							<span>
 								<FontAwesomeIcon
@@ -66,6 +67,16 @@ export default function Home() {
 						</span>
 					</header>
 					<main>
+						<div id={styles.portrait}>
+							<Image
+								priority
+								src='/images/cv.jpg'
+								className={styles.icon}
+								height={300}
+								width={300}
+								alt=''
+							/>
+						</div>
 						<section id={styles.bio_text}>
 							<p>
 								<span>
@@ -97,16 +108,6 @@ export default function Home() {
 								so most of the time I end up there.
 							</p>
 						</section>
-						<div id={styles.portrait}>
-							<Image
-								priority
-								src='/images/cv.jpg'
-								className={styles.icon}
-								height={300}
-								width={300}
-								alt=''
-							/>
-						</div>
 					</main>
 					<footer>
 						<div id={styles.stack}>

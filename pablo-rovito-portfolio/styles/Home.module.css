@@ -20,7 +20,7 @@
 	z-index: 502;
 	position: absolute;
 	top: 0px;
-	left: calc(80% + 1.5rem);
+	right: calc(20% - 1.5rem);
 	height: 3rem;
 	width: 3rem;
 	border-radius: 0 0 2px 2px;
@@ -111,6 +111,7 @@
 	background-color: #202020;
 	height: calc(15vh + 1px);
 	display: flex;
+	flex-wrap: wrap;
 	transform-origin: bottom;
 	transition: all 0.2s ease-in-out;
 	z-index: 500;
@@ -152,9 +153,10 @@
 .contact {
 	position: absolute;
 	height: 100%;
-	width: 100%;
+	width: 250px;
 	list-style-type: none;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: center;
 	margin-left: 2rem;
@@ -199,6 +201,7 @@
 
 .links {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
@@ -423,7 +426,7 @@
 #bio_container header #menu_direction {
 	position: absolute;
 	top: 4rem;
-	right: calc(15% + 1rem - 3px);
+	right: calc(20% - 5px);
 }
 
 #bio_container header #menu_direction #txt {
@@ -435,6 +438,7 @@
 }
 
 #bio_container header #menu_direction #pointer {
+	color: #202020;
 	margin-left: 0.5rem;
 	animation-name: contactArrowUp;
 	animation-duration: 0.5s;
@@ -786,11 +790,156 @@
 @keyframes moveY {
 	0% {
 		opacity: 1;
-		transform: translateY(50vw);
+		transform: translateY(50%);
 	}
 
 	100% {
 		opacity: 0.2;
-		transform: translateY(-50vw);
+		transform: translateY(-150%);
+	}
+}
+
+@media (max-width: 997px) {
+	.footer,
+	.footer_hidden {
+		right: 0;
+		width: 50%;
+		height: 450px;
+		flex-direction: column;
+	}
+	.footer_hidden {
+		transform: translateY(-450px);
+	}
+
+	.contact_button {
+		transform: translateY(calc(450px - 3rem));
+	}
+	.contact {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 2rem 0;
+		width: 100%;
+	}
+	.contact li {
+		margin: 0.5rem;
+	}
+	.links {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 250px;
+	}
+
+	#bio_container header {
+		height: 7rem;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+		overflow: visible;
+	}
+
+	#bio_container header #menu_direction {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	#bio_container header #menu_direction #txt {
+		display: flex;
+		flex-wrap: wrap;
+		width: 80%;
+	}
+
+	#bio_container main {
+		position: relative;
+		height: auto;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: aqua;
+		overflow: visible;
+	}
+
+	#bio_container main #portrait {
+		position: unset;
+	}
+
+	#bio_container main::after {
+		right: unset;
+		right: calc(5% -150px);
+		width: 1px;
+		height: 50%;
+		background: linear-gradient(
+			to top,
+			rgba(0, 255, 255) 0%,
+			rgba(255, 0, 255) 100%
+		);
+		animation-name: moveY;
+		animation-duration: 5s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	#greet h1 {
+		font-size: 4rem;
+	}
+
+	#bio_text {
+		width: calc(100% - 300px - 4rem);
+		padding: 0 4rem;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		opacity: 1;
+	}
+
+	#bio_text p {
+		font-size: 1.4rem;
+		line-height: 1.2;
+		font-weight: 300;
+	}
+
+	#bio_container footer {
+		height: calc(85vh - 300px);
+		width: 100%;
+		overflow: hidden;
+	}
+
+	#stack {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#stack label {
+		width: 100%;
+		font-size: 4rem;
+		font-weight: 400;
+		color: #202020;
+		padding: 2rem 4rem;
+	}
+
+	#stack ul {
+		width: 100%;
+		padding: 0 4rem;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#stack ul li {
+		font-size: 1.5rem;
+		padding: 0.5rem;
+		margin: 5px;
+		letter-spacing: -1px;
+		word-spacing: -4px;
+		border: solid 1px #202020;
+		border-radius: 3px;
 	}
 }
